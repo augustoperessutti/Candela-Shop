@@ -1,0 +1,38 @@
+<!--
+<aside class="main__container">
+<select [(ngModel)]="selectedCategory._id" (change)="onSelect($any($event.target).value)">
+    <option value="">Vacío</option>
+    <option *ngFor="let category of categoryElements" value={{category._id}}>{{category.name}}</option>
+</select>
+</aside>
+-->
+
+<main class="main__container">
+    <div class="main__sub-container">
+        <h1 class="main__title">COLECCIÓN DE VERANO!</h1>
+        <p class="main__subtitle">Productos</p>
+        <div class="product__big-container">
+            <div class="product__container" *ngFor="let product of products">
+                <div class="product__img-box">
+                    <img class="product__image" src="{{product.imageSrc}}" alt="{{product.imageAlt}}">
+                    <div (click)="favsService.clickFav(product)">
+                        <img class="product__favs-box" src="../../../../../../assets/icons/heart2.svg" alt="Add favs">
+                    </div>
+                </div>
+                <div class="product__info-container">
+                    <div>
+                        <h1 class="product__title">{{product.name.toUpperCase()}}</h1>
+                        <p class="product__description">{{product.description}}</p>
+                    </div>
+                    <div class="product__cart-container">
+                        <div class="product__price"><span
+                                class="product__price product__price--old-price">{{product.price}}</span> | <span
+                                class="product__price product__price--discount">{{promotion.apli15Discount(product.price)}}</span>
+                        </div>
+                        <div class="product__add-cart" (click)="addCart.clickBuy(product)">COMPRAR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

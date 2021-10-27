@@ -1,0 +1,13 @@
+<footer>
+    <div class="footer__container">
+        <div class="footer__container-icons">
+            <div *ngFor="let link of footerLinks.icons" [routerLink]="[link.navigate]">
+                <div class="footer__element">
+                    <a><img class="footer__icon" src="{{link.icon}}"></a>
+                    <span class="footer__text">{{link.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">{{footerLinks.copyright}}</div>
+    </div>
+</footer>

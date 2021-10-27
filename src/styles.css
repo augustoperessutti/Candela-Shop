@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-white: #ffffff;
+  --color-white-svg: invert(100%) sepia(0%) saturate(16%) hue-rotate(264deg) brightness(105%) contrast(104%);
+  --color-black: #1d1d1d;
+  --color-grey: #a3a3a3;
+  --color-grey-100: #d8d8d8;
+  --color-grey-100-svg: invert(63%) sepia(54%) saturate(0%) hue-rotate(171deg) brightness(121%) contrast(99%);
+  --color-principal: #DE6C83;
+  --color-principal-special: #ECB0E1;
+  --color-principal-special-opacity: #ECB0E180;
+  --color-secondary: #C9DDFF;
+  --color-secondary-special: #C9DDFF;
+  --color-secondary-special-opacity: #C9DDFFBF;
+  --color-principal-svg: invert(67%) sepia(38%) saturate(4262%) hue-rotate(307deg) brightness(95%) contrast(82%);
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.main__container {
+  padding-bottom: 71px;
+  padding-top: 15px;
+}
+
+.main__title {
+  font-size: 20px;
+  font-family: 'Roboto Thin';
+  margin: 0px;
+  padding: 0 20px;
+  color: var(--color-black);
+  margin-bottom: 5px;
+}
+
+.main__subtitle {
+  font-size: 12px;
+  font-family: 'Roboto Thin';
+  margin: 0px;
+  padding: 0 20px;
+  color: var(--color-black);
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .main__container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main__title {
+    padding: 0 50px;
+  }
+  .main__subtitle {
+    padding: 0 50px;
+  }
+  .main__sub-container {
+    width: 90%;
+  }
+}
+
+.loading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.loading-title {
+  font-family: 'Athene';
+  font-size: 25px;
+  color: var(--color-principal);
+  margin: 0px;
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 10%;
+}
+
+.spinner {
+  color: var(--color-principal);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.spinner:after {
+  -webkit-animation: changeContent .8s linear infinite;
+          animation: changeContent .8s linear infinite;
+  display: block;
+  content: "⠋";
+  font-size: 80px;
+}
+
+@-webkit-keyframes changeContent {
+  10% {
+    content: "⠙";
+  }
+  20% {
+    content: "⠹";
+  }
+  30% {
+    content: "⠸";
+  }
+  40% {
+    content: "⠼";
+  }
+  50% {
+    content: "⠴";
+  }
+  60% {
+    content: "⠦";
+  }
+  70% {
+    content: "⠧";
+  }
+  80% {
+    content: "⠇";
+  }
+  90% {
+    content: "⠏";
+  }
+}
+
+@keyframes changeContent {
+  10% {
+    content: "⠙";
+  }
+  20% {
+    content: "⠹";
+  }
+  30% {
+    content: "⠸";
+  }
+  40% {
+    content: "⠼";
+  }
+  50% {
+    content: "⠴";
+  }
+  60% {
+    content: "⠦";
+  }
+  70% {
+    content: "⠧";
+  }
+  80% {
+    content: "⠇";
+  }
+  90% {
+    content: "⠏";
+  }
+}
+/*# sourceMappingURL=styles.css.map */

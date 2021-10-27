@@ -1,0 +1,15 @@
+<div class="hero__container">
+    <img src="{{homeInfo.offerImage.src}}" alt="{{homeInfo.offerImage.alt}}" class="hero__img">
+    <div class="hero__text-box">
+        <span class="hero__main-text">{{homeInfo.offerTitle.toUpperCase()}}</span>
+    </div>
+    <div class="hero__rrss-container">
+        <div class="hero__rrss-box">
+            <div class="hero__rrss-element" *ngFor="let rrss of homeInfo.rrss">
+                <a href="{{rrss.url}}">
+                    <img class="hero__rrss-img" src="{{rrss.icon}}" alt="{{rrss.name}}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

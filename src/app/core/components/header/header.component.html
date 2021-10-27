@@ -1,0 +1,20 @@
+<header>
+    <div class="header__container">
+        <div class="header__promotion-container" *ngIf="closeStatus">15% DE DESCUENTO ESTA SEMANA!
+            <div class="header__promotion-container--close-button" (click)="closeAdd()">X</div>
+        </div>
+        <a class="header__container-link" [routerLink]="[headerData.url]">
+            <p class="header__title">{{headerData.title.toUpperCase()}}</p>
+            <span class="header__subtitle">{{headerData.subtitle.toUpperCase()}}</span>
+        </a>
+        <div class="header-b__container">
+            <div class="header-b__container-icons">
+                <div *ngFor="let link of footerLinks.icons" [routerLink]="[link.navigate]">
+                    <div class="header-b__element">
+                        <span class="header-b__text">{{link.name.toUpperCase()}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

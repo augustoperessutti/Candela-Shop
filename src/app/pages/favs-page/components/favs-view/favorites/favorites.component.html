@@ -1,0 +1,50 @@
+<div class="main__container">
+    <div *ngIf="favsGetted.length <= 0" class="main__sub-container">
+        <h1 class="main__title">Aún no tienes favoritos 😢</h1>
+        <p class="main__title">Regresa a nuestra HOME y elige tus prendas favoritas!</p>
+    </div>
+    <div *ngIf="favsGetted.length >=1" class="main__sub-container">
+        <h1 class="main__title">Aquí tienes tus prendas favoritas 💥</h1>
+        <p class="favorites__total">Total de prendas favoritas:
+            <span class="favorites__total--number">{{favsGetted.length}}</span>
+        </p>
+        <div class="favorites__two-containers">
+            <div class="favorites__big-container">
+                <div *ngFor="let product of favsGetted" class="favorites__sub-container">
+                    <div class="favorites__container">
+                        <div class="favorites__product-box">
+                            <div>
+                                <img class="favorites__product-image" src="{{product.imageSrc}}" alt="{{product.name}}">
+                            </div>
+                            <div class="favorites__product-info">
+                                <div>
+                                    <h1 class="favorites__product-title">{{product.name.toUpperCase()}}</h1>
+                                    <p class="favorites__product-description">{{product.description}}</p>
+                                </div>
+                                <div class="favorites__product-buttons-container">
+                                    <span class="favorites__product-delete"
+                                        (click)="favsService.deleteItemFav(product)">QUITAR DE MIS FAVORITOS</span>
+                                    <!-- <button class="favorites__product-delete" (click)="favsService.deleteItemFav(product)">
+                                    <img class="favorites__product-delete-img" src="../../../../../../assets/icons/trash.svg" alt="Eliminar prenda">
+                                </button> -->
+                                    <button class="favorites__product-price" (click)="addCart.clickBuy(product); goCart()">
+                                        COMPRAR
+                                        <span class="favorites__product-price--number">{{promotion.apli15Discount(product.price)}}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="favorites__aside-container">
+                <a href="#"><div class="favorites__aside-image-container">
+                    <img class="favorites__aside-image-border" src="../../../../../../assets/images/border-aside.png" alt="border-aside">
+                    <img class="favorites__aside-image" src="../../../../../../assets/images/aside-image.jpeg" alt="RRSS">
+                    <img class="favorites__aside-image-message" src="../../../../../../assets/images/follow-us-aside.png" alt="Follow us">
+                </div></a>
+            </div>
+        </div>
+    </div>
+</div>
